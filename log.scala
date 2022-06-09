@@ -1,4 +1,3 @@
-import java.util.Calendar
 import java.io.PrintWriter
 import scala.util.{Try,Success,Failure}
 
@@ -18,7 +17,7 @@ import scala.util.{Try,Success,Failure}
     }
   }
 
-  def dateTimeNow = Calendar.getInstance().getTime().toString
+  def dateTimeNow = java.util.Calendar.getInstance().getTime().toString
 
   // saving data to a file on disk
   def saveFile[T](path: String, text: List[T]) = try { 
