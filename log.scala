@@ -6,8 +6,8 @@ import scala.util.{Try,Success,Failure}
   // res - info, warn, error or other
   // mes - any message
   // file - save or not to file
-  // err - bug report
-  def log(res: String, msg: String, file: Boolean = false, err: List[Any] = List()) = {
+  // err - error report
+  def log[T](res: String, msg: String, file: Boolean = false, err: List[T] = List()) = {
     println(s"[$res] $msg")
     for (e <- err) println(s"[$res] $e")
     if (file == true) {
